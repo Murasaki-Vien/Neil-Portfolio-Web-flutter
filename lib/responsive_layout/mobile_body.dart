@@ -5,8 +5,8 @@ class MobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple[600],
+    return const Scaffold(
+      backgroundColor: Color(0xffD9D9D9),
       body: const Center(
         child : Column(
           children: [

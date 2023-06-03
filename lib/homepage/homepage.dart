@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neil_portfolio/responsive_layout/desktop_body.dart';
+import 'package:neil_portfolio/responsive_layout/desktop_body1.dart';
 import 'package:neil_portfolio/responsive_layout/mobile_body.dart';
 import 'package:neil_portfolio/responsive_layout/responsive_layout.dart';
 
@@ -15,6 +16,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: ResponsiveLayout(
-            mobileBody: MobileBody(), desktopBody: DesktopBody()));
+            mobileBody: MobileBody(),
+            desktopBody1: DesktopBody1(),
+            desktopBody: DesktopBody()));
   }
 }

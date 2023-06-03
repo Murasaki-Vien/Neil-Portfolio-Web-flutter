@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class DesktopBody extends StatelessWidget {
-  const DesktopBody({super.key});
+class DesktopBody1 extends StatelessWidget {
+  const DesktopBody1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -97,40 +97,17 @@ class DesktopBody extends StatelessWidget {
                                         height: 50.h,
                                         width: 230.w,
                                         child: Center(
-                                          child: Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 41.w, right: 48.w),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                      right: 34.w),
-                                                  child: SvgPicture.asset(
-                                                    'assets/svg/github_logo.svg',
-                                                    height: 30.h,
-                                                    width: 30.w,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  color:
-                                                      const Color(0xffD9D9D9),
-                                                  height: 41.h,
-                                                  width: 1.5.w,
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: 46.w),
-                                                  child: SvgPicture.asset(
-                                                    'assets/svg/instagram_logo.svg',
-                                                    height: 30.h,
-                                                    width: 30.w,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment
+                                                    .center,
+                                            children: [
+                                              SvgPicture.asset(
+                                                'assets/svg/github_logo.svg',
+                                                height: 30.h,
+                                                width: 30.w,
+                                              ),
+                                            ],
                                           ),
                                         )),
                                   ],
