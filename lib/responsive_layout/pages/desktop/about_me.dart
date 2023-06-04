@@ -78,7 +78,7 @@ class DesktopAboutMe extends StatelessWidget {
                         Container(
                           alignment: AlignmentDirectional.bottomStart,
                           width: 694.w,
-                          height: 304.h,
+                          height: 350.h,
                           decoration: BoxDecoration(
                               border: Border(
                             bottom: BorderSide(
@@ -90,11 +90,42 @@ class DesktopAboutMe extends StatelessWidget {
                               width: 2.w,
                             ),
                           )),
-                          child: Text(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vestibulum vestibulum enim, a ultrices elit iaculis eget. Nulla eu feugiat metus. Morbi id leo pulvinar, feugiat velit in, tempor massa. Sed ac nunc dapibus, mollis leo at, iaculis erat. Vestibulum viverra nisl mi, sit amet commodo neque tempus ac. Vivamus at pellentesque dui. Aenean iaculis leo vitae velit cursus rhoncus. Nam nec bibendum est. Nunc augue quam, congue non tempus vel, tempus cursus quam. Cras fermentum lorem tempus dui bibendum, quis varius nulla posuere. Sed lacinia congue laoreet. Sed dictum varius vulputate.",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.w300)),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Text(
+                                    "     Hello! I am an aspiring Software Engineer currently in my third year of studying Computer Engineering at Cebu Institute of Technology - University. Throughout my education, I have developed active listening skills, effective communication abilities, and strong programming skills that have prepared me for the engineering world. I am eager to gain real-world experience and further refine my skills.",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w300)),
+                                
+                                SizedBox( height : 7.h),
+                                Text(
+                                    "     In addition to my academic pursuits, I have been involved in several projects that have helped me apply my knowledge and collaborate with a team. One notable project is CAMPUSHARE, a software development project in which I took on the role of lead front-end developer. I successfully managed a team of front-end developers and provided assistance to the project manager to ensure the project's smooth execution.",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w300)),
+                                SizedBox( height : 7.h),
+                                Text(
+                                    "     Another project I worked on is RentNaTeknoy, a web application developed as part of my Modern Systems and Design course. In this project, I contributed as both a front-end and back-end developer. I utilized HTML for the front-end and employed Flask as the framework for the back-end development. The project also involved working with MySQL as the database management system.",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w300)),
+                                SizedBox( height : 7.h),
+                                Text(
+                                    "     With a strong dedication to my craft and a relentless drive to learn and grow, I am passionate about leveraging my skills to contribute to the field of software engineering. I continuously seek out opportunities to expand my understanding and stay updated with the latest industry trends. I approach my work with professionalism and maintain a strong work ethic, which I believe are essential qualities for success in this field.",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w300)),
+                                SizedBox( height : 7.h),
+                                Text(
+                                    "     Thank you for taking the time to explore my portfolio. If you have any potential collaborations or opportunities that align with my skills and aspirations, please feel free to reach out to me. I am excited to embark on new challenges and make a positive impact in the engineering world.",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
+                          ),
                         )
                       ],
                     ),

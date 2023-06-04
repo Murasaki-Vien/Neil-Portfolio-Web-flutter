@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neil_portfolio/responsive_layout/pages/desktop/about_me.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DesktopBody extends StatefulWidget {
   const DesktopBody({super.key});
@@ -27,6 +28,59 @@ class _DesktopBodyState extends State<DesktopBody> {
 
     await Scrollable.ensureVisible(contextPortfolioPageKey,
         duration: const Duration(seconds: 3), curve: Curves.bounceOut);
+  }
+
+  //redirection link for github
+  Future<void> _goGihubPage(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
+  }
+
+  //redirection link for Insta
+  Future<void> _goInstaPage(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
+  }
+
+  //redirection link for CampushareRepo
+  Future<void> _repoCampuShare(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
+  }
+
+  //redirection link for _repoRentNaTeknoy
+  Future<void> _repoRentNaTeknoy(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
+  }
+
+  //redirection link for _repoMindMatch
+  Future<void> _repoMindMatch(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
+  }
+  //redirection link for _gotoResume
+  Future<void> _gotoResume(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'COULD NOT LAUNCH';
+    }
   }
 
   @override
@@ -61,25 +115,44 @@ class _DesktopBodyState extends State<DesktopBody> {
                                   SizedBox(
                                     width: 716.w,
                                   ),
-                                  GestureDetector(
-                                    onTap: () => scrollToItemAbout(),
-                                    child: Text(
-                                      "About",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 20.sp,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  ),
                                   SizedBox(
-                                    width: 184.w,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () => scrollToItemPortfolio(),
-                                    child: Text(
-                                      "Portfolio",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 20.sp,
-                                          fontWeight: FontWeight.w400),
+                                    width : 368.w,
+                                    //color: Colors.amber,
+                                    child: Row(
+                                      mainAxisAlignment : MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () => scrollToItemAbout(),
+                                          child: Text(
+                                            "About",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 20.sp,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () => scrollToItemPortfolio(),
+                                          child: Text(
+                                            "Portfolio",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 20.sp,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            const url = 'https://drive.google.com/file/d/128Wbot8n-VomJB7kt4_WdMvtHa5693kX/view?usp=sharing';
+
+                                            _gotoResume(url);
+                                          },
+                                          child: Text(
+                                            "Resume",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 20.sp,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -146,15 +219,29 @@ class _DesktopBodyState extends State<DesktopBody> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  right: 34.w),
+                                                        MouseRegion(
+                                                          cursor:
+                                                              SystemMouseCursors
+                                                                  .click,
                                                           child:
-                                                              SvgPicture.asset(
-                                                            'assets/svg/github_logo.svg',
-                                                            height: 30.h,
-                                                            width: 30.w,
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              const url =
+                                                                  'https://github.com/Murasaki-Vien';
+                                                              _goGihubPage(url);
+                                                            },
+                                                            child: Padding(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      right:
+                                                                          34.w),
+                                                              child: SvgPicture
+                                                                  .asset(
+                                                                'assets/svg/github_logo.svg',
+                                                                height: 30.h,
+                                                                width: 30.w,
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
                                                         Container(
@@ -163,15 +250,29 @@ class _DesktopBodyState extends State<DesktopBody> {
                                                           height: 41.h,
                                                           width: 1.5.w,
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  left: 46.w),
+                                                        MouseRegion(
+                                                          cursor:
+                                                              SystemMouseCursors
+                                                                  .click,
                                                           child:
-                                                              SvgPicture.asset(
-                                                            'assets/svg/instagram_logo.svg',
-                                                            height: 30.h,
-                                                            width: 30.w,
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              const url =
+                                                                  'https://www.instagram.com/nel_deyaz/';
+                                                              _goInstaPage(url);
+                                                            },
+                                                            child: Padding(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      left:
+                                                                          46.w),
+                                                              child: SvgPicture
+                                                                  .asset(
+                                                                'assets/svg/instagram_logo.svg',
+                                                                height: 30.h,
+                                                                width: 30.w,
+                                                              ),
+                                                            ),
                                                           ),
                                                         ),
                                                       ],
@@ -320,29 +421,213 @@ class _DesktopBodyState extends State<DesktopBody> {
                                 // color : Colors.amber,
                                 width: 1270.w,
                                 child: Row(
-                                  mainAxisAlignment : MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Row(
+                                      Column(
                                         children: [
+                                          Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 327.w,
+                                                child: Text("Latest Projects",
+                                                    style: GoogleFonts.poppins(
+                                                      fontSize: 80.sp,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    )),
+                                              ),
+                                            ],
+                                          ),
                                           SizedBox(
-                                            width: 327.w,
-                                            child: Text("Latest Projects",
-                                                style: GoogleFonts.poppins(
-                                                  fontSize: 80.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                )),
+                                            height: 54.h,
+                                          ),
+                                          Row(
+                                            children: [
+                                              //Project 1
+                                              MouseRegion(
+                                                cursor:
+                                                    SystemMouseCursors.click,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    const url =
+                                                        'https://github.com/Murasaki-Vien/MindMatch-Game';
+
+                                                    _repoMindMatch(url);
+                                                  },
+                                                  child: Container(
+                                                      //color: Colors.amber,
+                                                      width: 417.h,
+                                                      decoration: BoxDecoration(
+                                                          border: Border(
+                                                              top: BorderSide(
+                                                                  color: const Color(
+                                                                      0xffD9D9D9),
+                                                                  width: 3.w))),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                top: 24.w),
+                                                        child: Column(
+                                                          children: [
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Text(
+                                                                    "Project 1",
+                                                                    style: GoogleFonts.poppins(
+                                                                        fontSize: 50
+                                                                            .sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w500)),
+                                                                Container(
+                                                                  height: 53.h,
+                                                                  width: 53.w,
+                                                                  decoration: BoxDecoration(
+                                                                      color: const Color(
+                                                                          0xff41426E),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              2)),
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .arrow_outward_rounded,
+                                                                    color: const Color(
+                                                                        0xffFD636D),
+                                                                    size: 53.sp,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                            ),
+
+                                                            SizedBox(
+                                                                height: 30.h),
+                                                            Container(
+                                                                height: 384.h,
+                                                                color: const Color(
+                                                                    0xffD9D9D9),
+                                                                child: Padding(
+                                                                  padding: EdgeInsets.only(
+                                                                      right:
+                                                                          5.w,
+                                                                      left:
+                                                                          5.w),
+                                                                  child: Center(
+                                                                    child: SvgPicture
+                                                                        .asset(
+                                                                            'assets/svg/mindMatch.svg'),
+                                                                  ),
+                                                                ))
+                                                            //end of Project 1
+                                                          ],
+                                                        ),
+                                                      )),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
-                                        height: 54.h,
+
+                                      //Start of Proj2
+                                      MouseRegion(
+                                        cursor: SystemMouseCursors.click,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            const url =
+                                                'https://github.com/Murasaki-Vien/RentNaTeknoy';
+
+                                            _repoRentNaTeknoy(url);
+                                          },
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsets.only(top: 161.h),
+                                            child: Container(
+                                                //color: Colors.amber,
+                                                width: 417.h,
+                                                decoration: BoxDecoration(
+                                                    border: Border(
+                                                        top: BorderSide(
+                                                            color: const Color(
+                                                                0xffD9D9D9),
+                                                            width: 3.w))),
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 24.w),
+                                                  child: Column(
+                                                    children: [
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Text("Project 2",
+                                                              style: GoogleFonts.poppins(
+                                                                  fontSize:
+                                                                      50.sp,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500)),
+                                                          Container(
+                                                            height: 53.h,
+                                                            width: 53.w,
+                                                            decoration: BoxDecoration(
+                                                                color: const Color(
+                                                                    0xff41426E),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            2)),
+                                                            child: Icon(
+                                                              Icons
+                                                                  .arrow_outward_rounded,
+                                                              color: const Color(
+                                                                  0xffFD636D),
+                                                              size: 53.sp,
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+
+                                                      SizedBox(height: 30.h),
+                                                      Container(
+                                                        height: 384.h,
+                                                        color: const Color(
+                                                            0xffD9D9D9),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  right: 5.w,
+                                                                  left: 5.w),
+                                                          child: Center(
+                                                            child: Image.asset(
+                                                              "assets/img/rentnaTeknoy.png",
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                      //end of Project 1
+                                                    ],
+                                                  ),
+                                                )),
+                                          ),
+                                        ),
                                       ),
-                                      Row(
-                                        children: [
-                                          //Project 1
-                                          Container(
+                                      //End of Proj2
+
+                                      //Start of Proj3
+                                      MouseRegion(
+                                        cursor: SystemMouseCursors.click,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            const url =
+                                                'https://github.com/Murasaki-Vien/CampuShare1.2#getting-started';
+
+                                            _repoCampuShare(url);
+                                          },
+                                          child: Container(
                                               //color: Colors.amber,
                                               width: 417.h,
                                               decoration: BoxDecoration(
@@ -361,7 +646,7 @@ class _DesktopBodyState extends State<DesktopBody> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Text("Project 1",
+                                                        Text("Project 3",
                                                             style: GoogleFonts
                                                                 .poppins(
                                                                     fontSize:
@@ -395,127 +680,27 @@ class _DesktopBodyState extends State<DesktopBody> {
                                                       height: 384.h,
                                                       color: const Color(
                                                           0xffD9D9D9),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                right: 5.w,
+                                                                left: 5.w),
+                                                        child: Center(
+                                                          child:
+                                                              SvgPicture.asset(
+                                                            'assets/svg/campuShare.svg',
+                                                          ),
+                                                        ),
+                                                      ),
                                                     )
                                                     //end of Project 1
                                                   ],
                                                 ),
                                               )),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-
-                                  //Start of Proj2
-                                  Padding(
-                                    padding: EdgeInsets.only(top : 161.h),
-                                    child: Container(
-                                        //color: Colors.amber,
-                                        width: 417.h,
-                                        decoration: BoxDecoration(
-                                            border: Border(
-                                                top: BorderSide(
-                                                    color:
-                                                        const Color(0xffD9D9D9),
-                                                    width: 3.w))),
-                                        child: Padding(
-                                          padding: EdgeInsets.only(top: 24.w),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Text("Project 2",
-                                                      style: GoogleFonts.poppins(
-                                                          fontSize: 50.sp,
-                                                          fontWeight:
-                                                              FontWeight.w500)),
-                                                  Container(
-                                                    height: 53.h,
-                                                    width: 53.w,
-                                                    decoration: BoxDecoration(
-                                                        color: const Color(
-                                                            0xff41426E),
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                                2)),
-                                                    child: Icon(
-                                                      Icons.arrow_outward_rounded,
-                                                      color:
-                                                          const Color(0xffFD636D),
-                                                      size: 53.sp,
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                  
-                                              SizedBox(height: 30.h),
-                                              Container(
-                                                height: 384.h,
-                                                color: const Color(0xffD9D9D9),
-                                              )
-                                              //end of Project 1
-                                            ],
-                                          ),
-                                        )),
-                                  ),
-                                  //End of Proj2
-
-                                  //Start of Proj3
-                                  Container(
-                                      //color: Colors.amber,
-                                      width: 417.h,
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              top: BorderSide(
-                                                  color:
-                                                      const Color(0xffD9D9D9),
-                                                  width: 3.w))),
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: 24.w),
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Text("Project 3",
-                                                    style: GoogleFonts.poppins(
-                                                        fontSize: 50.sp,
-                                                        fontWeight:
-                                                            FontWeight.w500)),
-                                                Container(
-                                                  height: 53.h,
-                                                  width: 53.w,
-                                                  decoration: BoxDecoration(
-                                                      color: const Color(
-                                                          0xff41426E),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2)),
-                                                  child: Icon(
-                                                    Icons.arrow_outward_rounded,
-                                                    color:
-                                                        const Color(0xffFD636D),
-                                                    size: 53.sp,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                  
-                                            SizedBox(height: 30.h),
-                                            Container(
-                                              height: 384.h,
-                                              color: const Color(0xffD9D9D9),
-                                            )
-                                            //end of Project 1
-                                          ],
                                         ),
-                                      )),
-                                  //end of Proj3
-                                ]),
+                                      ),
+                                      //end of Proj3
+                                    ]),
                               ),
                             ),
                             Align(
