@@ -55,73 +55,78 @@ class DesktopBody1 extends StatelessWidget {
                         ),
                         //introductory part
                         SizedBox(
-                          child: Row(
-                            children: [
-                              Column(children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Hi! I am",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 50.sp,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.5.h),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Neil Melvin",
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 80.sp,
-                                        fontWeight: FontWeight.w800,
+                          child: Padding(
+                            padding: EdgeInsets.only(right : 230.w),
+                            child: Row(
+                              mainAxisAlignment : MainAxisAlignment.spaceBetween,
+                              //mainAxisSize : MainAxisSize.min,
+                              children: [
+                                Column(children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Hi! I am",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 50.sp,
+                                            fontWeight: FontWeight.w600,
+                                            height: 1.5.h),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Check out my",
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 45.sp,
-                                        fontWeight: FontWeight.w300,
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Neil Melvin",
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 80.sp,
+                                          fontWeight: FontWeight.w800,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 14.w,
-                                    ),
-                                    Container(
-                                        color: const Color(0xffFD636D),
-                                        height: 50.h,
-                                        width: 230.w,
-                                        child: Center(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                            children: [
-                                              SvgPicture.asset(
-                                                'assets/svg/github_logo.svg',
-                                                height: 30.h,
-                                                width: 30.w,
-                                              ),
-                                            ],
-                                          ),
-                                        )),
-                                  ],
-                                ),
-                              ]),
-                              SizedBox(
-                                width: 163.w,
-                              ),
-                              SvgPicture.asset(
-                                'assets/svg/circle_logo.svg',
-                                height: 513.h,
-                                width: 513.w,
-                              )
-                            ],
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Check out my",
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 45.sp,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 14.w,
+                                      ),
+                                      Container(
+                                          color: const Color(0xffFD636D),
+                                          height: 50.h,
+                                          width: 230.w,
+                                          child: Center(
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .center,
+                                              children: [
+                                                SvgPicture.asset(
+                                                  'assets/svg/github_logo.svg',
+                                                  height: 30.h,
+                                                  width: 30.w,
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                    ],
+                                  ),
+                                ]),
+                                // SizedBox(
+                                //   width: 200.w,
+                                // ),
+                                SvgPicture.asset(
+                                  'assets/svg/circle_logo.svg',
+                                  height: 513.h,
+                                  width: 513.w,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         //end of introductory
