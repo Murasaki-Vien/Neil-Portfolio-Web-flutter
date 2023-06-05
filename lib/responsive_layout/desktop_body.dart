@@ -48,7 +48,7 @@ class _DesktopBodyState extends State<DesktopBody> {
   }
 
   //redirection link for CampushareRepo
-  Future<void> _repoCampuShare(String url) async {
+  Future<void> _projectRedirect(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -56,23 +56,7 @@ class _DesktopBodyState extends State<DesktopBody> {
     }
   }
 
-  //redirection link for _repoRentNaTeknoy
-  Future<void> _repoRentNaTeknoy(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'COULD NOT LAUNCH';
-    }
-  }
-
-  //redirection link for _repoMindMatch
-  Future<void> _repoMindMatch(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'COULD NOT LAUNCH';
-    }
-  }
+  
   //redirection link for _gotoResume
   Future<void> _gotoResume(String url) async {
     if (await canLaunch(url)) {
@@ -105,9 +89,9 @@ class _DesktopBodyState extends State<DesktopBody> {
 
                   ProjectsPage(
                     portfolioPageKey: portfolioPageKey, 
-                    repoCampuShare: _repoCampuShare, 
-                    repoMindMatch: _repoMindMatch,
-                    repoRentNaTeknoy: _repoRentNaTeknoy),
+                    repoCampuShare: _projectRedirect, 
+                    repoMindMatch: _projectRedirect,
+                    repoRentNaTeknoy: _projectRedirect),
 
                   //start of about Me
 
