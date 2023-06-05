@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 class SqaureProjContents extends StatelessWidget {
   //final String child;
   //final dynamic projectRedirect;
-  int counter;
+  final int counter;
   SqaureProjContents({
     super.key,
     required this.counter,

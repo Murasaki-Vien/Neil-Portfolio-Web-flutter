@@ -12,11 +12,11 @@ class MobileProjectsView extends StatelessWidget {
     required this.portfolioPageKey,
   });
 
-  final List _projectNumber = [
-    'Project 1',
-    'Project 2',
-    'Project 3',
-  ];
+  // final List _projectNumber = [
+  //   'Project 1',
+  //   'Project 2',
+  //   'Project 3',
+  // ];
   final List _projectName = [
     'Mind Match',
     'RentNaTeknoy',
@@ -106,52 +106,55 @@ class MobileProjectsView extends StatelessWidget {
                                     bottom: BorderSide(
                                         color: const Color(0xffD9D9D9),
                                         width: 4.sp))),
-                            child: Expanded(
-                                child: ListView.builder(
-                                    itemCount: _projectName.length,
-                                    scrollDirection: Axis.vertical,
-                                    itemBuilder: (context, index) {
-                                      return TileViewProjects(
-                                        projectlinks: _projectlinks[index], svgLinks: _svgLinks[index]);
-                                    })
-                                // Column(
-                                //   mainAxisAlignment : MainAxisAlignment.spaceAround,
-                                //   children: [
-                                //         Container(
-
-                                //           //color : Colors.purple,
-                                //           //width : 700.w,
-                                //           height : 100.h,
-                                //           child : SvgPicture.asset(
-                                //             'assets/svg/mindMatch.svg'
-                                //           ),
-                                //         ),
-                                //         SizedBox(
-                                //           height: 50.h,
-                                //         ),
-                                //         Container(
-
-                                //           //color : Colors.purple,
-                                //           //width : 200.w,
-                                //           height : 100.h,
-                                //           child : SvgPicture.asset(
-                                //             'assets/svg/rentnaTeknoy.svg'
-                                //           ),
-                                //         ),
-                                //         SizedBox(
-                                //           height: 50.h,
-                                //         ),
-                                //         Container(
-                                //           //color : Colors.purple,
-                                //           //width : 200.w,
-                                //           height : 100.h,
-                                //            child : SvgPicture.asset(
-                                //             'assets/svg/campuShare.svg'
-                                //           ),
-                                //         ),
-                                //       ]
-                                //   ),
-                                )),
+                            child: Padding(
+                              padding: EdgeInsets.only(top : 50.h),
+                              child: Expanded(
+                                  child: ListView.builder(
+                                      itemCount: _projectName.length,
+                                      scrollDirection: Axis.vertical,
+                                      itemBuilder: (context, index) {
+                                        return TileViewProjects(
+                                          projectlinks: _projectlinks[index], svgLinks: _svgLinks[index]);
+                                      })
+                                  // Column(
+                                  //   mainAxisAlignment : MainAxisAlignment.spaceAround,
+                                  //   children: [
+                                  //         Container(
+                            
+                                  //           //color : Colors.purple,
+                                  //           //width : 700.w,
+                                  //           height : 100.h,
+                                  //           child : SvgPicture.asset(
+                                  //             'assets/svg/mindMatch.svg'
+                                  //           ),
+                                  //         ),
+                                  //         SizedBox(
+                                  //           height: 50.h,
+                                  //         ),
+                                  //         Container(
+                            
+                                  //           //color : Colors.purple,
+                                  //           //width : 200.w,
+                                  //           height : 100.h,
+                                  //           child : SvgPicture.asset(
+                                  //             'assets/svg/rentnaTeknoy.svg'
+                                  //           ),
+                                  //         ),
+                                  //         SizedBox(
+                                  //           height: 50.h,
+                                  //         ),
+                                  //         Container(
+                                  //           //color : Colors.purple,
+                                  //           //width : 200.w,
+                                  //           height : 100.h,
+                                  //            child : SvgPicture.asset(
+                                  //             'assets/svg/campuShare.svg'
+                                  //           ),
+                                  //         ),
+                                  //       ]
+                                  //   ),
+                                  ),
+                            )),
                         // Container(
                         //     alignment : AlignmentDirectional.center,
                         //     //color: Colors.amber,
