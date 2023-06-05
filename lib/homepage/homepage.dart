@@ -14,10 +14,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
         body: ResponsiveLayout(
             mobileBody: MobileBody(),
-            desktopBody1: DesktopBody1(),
-            desktopBody: DesktopBody()));
+            desktopBody1: const DesktopBody1(),
+            desktopBody: const DesktopBody()));
   }
 }

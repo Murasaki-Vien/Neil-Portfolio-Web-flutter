@@ -101,10 +101,13 @@ class SqaureProjContents extends StatelessWidget {
                           Container(
                               height: 384.h,
                               color: const Color(0xffD9D9D9),
-                              child: Padding(
-                                padding: EdgeInsets.only(right: 5.w, left: 5.w),
-                                child: Center(
-                                  child: SvgPicture.asset(_svgLinks[counter]),
+                              child: AspectRatio(
+                                aspectRatio : 1,
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 5.w, left: 5.w),
+                                  child: Center(
+                                    child: SvgPicture.asset(_svgLinks[counter]),
+                                  ),
                                 ),
                               ))
                           //end of Project 1
